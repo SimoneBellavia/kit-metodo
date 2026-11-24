@@ -1,0 +1,15 @@
+# Obsidian: stato di sessione locale, non va versionato
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Segreti: mai in cronologia Git
+workspace/.env
+.env
+
+# Skill accese con skills.js --project: sono collegamenti alla libreria, non si versionano
+.claude/skills/journal/

@@ -1,0 +1,9 @@
+{
+  "name": "metodo",
+  "version": "0.1.0",
+  "description": "Il cuore del metodo di lavoro: skill handoff, controllo-skill, research e wait-what, gli hook che tengono d'occhio il contesto e gli script hub-check e skills.",
+  "author": {
+    "name": "gli autori del Kit Metodo"
+  },
+  "license": "MIT"
+}

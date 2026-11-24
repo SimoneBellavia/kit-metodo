@@ -1,0 +1,291 @@
+{
+  "name": "kit-metodo",
+  "owner": {
+    "name": "gli autori del Kit Metodo"
+  },
+  "metadata": {
+    "description": "Il metodo di lavoro con Claude Code: protocolli, hub di progetto, handoff, skill e hook del contesto."
+  },
+  "plugins": [
+    {
+      "name": "metodo",
+      "source": "./plugins/metodo",
+      "description": "Il cuore del metodo: skill handoff, controllo-skill, research e wait-what, gli hook del contesto e gli script hub-check e skills."
+    },
+    {
+      "name": "pocock-base",
+      "description": "Le sei skill di base di Matt Pocock: grill-me, grilling, teach, to-questionnaire, retro e writing-for-agents. Sempre accese.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills",
+        "ref": "main",
+        "sha": "abeeaf95660ba9e8b7c753eb38f441ca707a8823"
+      },
+      "strict": false,
+      "skills": [
+        "./productivity/grill-me",
+        "./productivity/grilling",
+        "./productivity/teach",
+        "./productivity/to-questionnaire",
+        "./engineering/retro",
+        "./productivity/writing-for-agents"
+      ]
+    },
+    {
+      "name": "stop-slop",
+      "description": "Toglie dai testi i giri di parole e i tic da scrittura automatica. Sempre accesa.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hardikpandya/stop-slop.git",
+        "path": ".",
+        "ref": "main",
+        "sha": "8da1f030185bdfe8471220585162991eaeb970e9"
+      },
+      "strict": false,
+      "skills": [
+        "./."
+      ]
+    },
+    {
+      "name": "design-impeccable",
+      "description": "Design web e interfacce con impeccable, di Paul Bakaus. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/pbakaus/impeccable.git",
+        "path": "plugin/skills/impeccable",
+        "ref": "main",
+        "sha": "b49177d32788f2dc585c42831d845dacf1ebed2c"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "design-apple-design",
+      "description": "Interfacce nello stile Apple, dalla raccolta di Emil Kowalski. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/emilkowalski/skills.git",
+        "path": "skills/apple-design",
+        "ref": "main",
+        "sha": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "design-ui-ux-pro-max",
+      "description": "Palette, font e stili visivi con ui-ux-pro-max. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+        "path": ".claude/skills/ui-ux-pro-max",
+        "ref": "main",
+        "sha": "6ec2bb58334ca3014573c4cbd4834ee3a40afd9d"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "design-make-interfaces-feel-better",
+      "description": "Piccoli ritocchi che rendono le interfacce più curate. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/jakubkrehel/make-interfaces-feel-better.git",
+        "path": "skills/make-interfaces-feel-better",
+        "ref": "main",
+        "sha": "6d9f2f1df10e8ce2ae1708598a73b0506fb98794"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "design-motion-ui",
+      "description": "Animazioni e movimento nelle interfacce. Fissata a una versione precedente, perché a monte la skill è stata rimossa. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/affaan-m/ECC.git",
+        "path": "skills/motion-ui",
+        "ref": "main",
+        "sha": "d2b352c20275b643f0966857a89bff5d925345aa"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "design-hallmark",
+      "description": "Pagine web da zero o stile estratto da un sito esistente, con hallmark. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Nutlope/hallmark.git",
+        "path": "skills/hallmark",
+        "ref": "main",
+        "sha": "04977e15f3dfd6ee4b74c887dac3eb52665d6c92"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "qualita-web",
+      "description": "Audit di qualità di un sito: prestazioni, accessibilità, SEO e buone pratiche. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/addyosmani/web-quality-skills.git",
+        "path": "skills/web-quality-audit",
+        "ref": "main",
+        "sha": "afa8da942115f2961fdbfa80807ea0b232ff6c00"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "ingegneria-avanzata",
+      "description": "Per i progetti software veri: wayfinder, domain-modeling, codebase-design, grill-with-docs, to-spec, to-tickets, prototype e git-guardrails-claude-code. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills",
+        "ref": "main",
+        "sha": "abeeaf95660ba9e8b7c753eb38f441ca707a8823"
+      },
+      "strict": false,
+      "skills": [
+        "./engineering/wayfinder",
+        "./engineering/domain-modeling",
+        "./engineering/codebase-design",
+        "./engineering/grill-with-docs",
+        "./engineering/to-spec",
+        "./engineering/to-tickets",
+        "./engineering/prototype",
+        "./misc/git-guardrails-claude-code"
+      ]
+    },
+    {
+      "name": "presentazioni",
+      "description": "Deck PDF di slide da un singolo documento, con wowerpoint. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/thedotmack/claude-mem.git",
+        "path": "plugin/skills/wowerpoint",
+        "ref": "main",
+        "sha": "b14ac567600f6d91b77d2d6e7a34bb0d9e2922a3"
+      },
+      "strict": false,
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "marketing",
+      "description": "Quarantatré skill di marketing: copy, SEO, ads, email, social, prezzi, lancio. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/coreyhaines31/marketingskills.git",
+        "path": "skills",
+        "ref": "main",
+        "sha": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1"
+      },
+      "strict": false,
+      "skills": [
+        "./ab-testing",
+        "./ad-creative",
+        "./ads",
+        "./analytics",
+        "./aso",
+        "./churn-prevention",
+        "./cold-email",
+        "./co-marketing",
+        "./community-marketing",
+        "./competitor-profiling",
+        "./competitors",
+        "./content-strategy",
+        "./copy-editing",
+        "./copywriting",
+        "./cro",
+        "./customer-research",
+        "./directory-submissions",
+        "./emails",
+        "./free-tools",
+        "./image",
+        "./influencer-marketing",
+        "./launch",
+        "./lead-magnets",
+        "./marketing-council",
+        "./marketing-ideas",
+        "./marketing-loops",
+        "./marketing-plan",
+        "./marketing-psychology",
+        "./offers",
+        "./onboarding",
+        "./paywalls",
+        "./popups",
+        "./pricing",
+        "./product-marketing",
+        "./prospecting",
+        "./public-relations",
+        "./referrals",
+        "./revops",
+        "./sales-enablement",
+        "./signup",
+        "./sms",
+        "./social",
+        "./video"
+      ]
+    },
+    {
+      "name": "marketing-brand",
+      "description": "Ventisette skill di brand e marketing: identità, posizionamento, voce, naming, ads. Opzionale.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/arnabbagxd/Brand-building-skills.git",
+        "path": "skills",
+        "ref": "main",
+        "sha": "4a0a8b5b7a0f64bf0fc551978a18a591670a5223"
+      },
+      "strict": false,
+      "skills": [
+        "./b2b-brand-marketing",
+        "./brand-architecture",
+        "./brand-audit",
+        "./brand-context",
+        "./brand-guidelines",
+        "./brand-identity",
+        "./brand-launch",
+        "./brand-manifesto",
+        "./brand-measurement",
+        "./brand-messaging",
+        "./brand-naming",
+        "./brand-packaging",
+        "./brand-partnerships",
+        "./brand-positioning",
+        "./brand-story",
+        "./brand-strategy",
+        "./brand-voice",
+        "./competitor-branding",
+        "./d2c-marketing",
+        "./email-marketing",
+        "./google-ads",
+        "./meta-ads",
+        "./personal-brand",
+        "./rebranding",
+        "./target-audience",
+        "./ugc-strategy",
+        "./whatsapp-marketing"
+      ]
+    }
+  ]
+}
