@@ -30,7 +30,7 @@ Nei comandi scrivi i percorsi con la barra `/`, anche su Windows: va bene sia pe
 
 ### 0. Saluto e avviso
 
-Prima di tutto controlla di girare sul computer dell'amico. Una sessione cloud, la modalità Cowork o una sandbox girano su una macchina virtuale Linux: lì un'installazione finisce in una macchina che si cancella. Se il sistema risulta Linux, oppure non hai accesso a `~/.claude`, chiedigli se il suo computer è davvero Linux. Se non lo è, fermati prima di modificare qualsiasi cosa. Spiegagli che deve aprire Claude Code sul suo computer: nel Terminale (PowerShell su Windows) scrive `claude`, oppure usa l'estensione di VS Code. Lì incolla di nuovo il link del kit.
+Prima di tutto controlla di girare sul computer dell'amico. Una sessione cloud, la modalità Cowork o una sandbox girano su una macchina virtuale, non sul suo computer, e non vedono il suo `~/.claude`: lì un'installazione non arriva dove serve. Se il sistema risulta Linux, oppure non hai accesso a `~/.claude`, chiedigli se il suo computer è davvero Linux. Se non lo è, fermati prima di modificare qualsiasi cosa. Spiegagli che deve aprire Claude Code sul suo computer: nel Terminale (PowerShell su Windows) scrive `claude`, oppure usa l'estensione di VS Code. Lì incolla di nuovo il link del kit.
 
 Scrivi: «Tanti saluti da parte di Simone!». Spiega in tre righe cosa stai per fare: installare dei plugin, copiare nel suo `~/.claude/` i protocolli e uno script per la barra di stato, sempre con il suo ok.
 Avvisalo che Claude Code gli mostrerà 10-15 richieste di permesso (lettura di questo sito, comandi da terminale, scritture in `~/.claude`): sono normali e può leggerle una per una.
@@ -44,8 +44,9 @@ Rileva il sistema operativo (Windows o Mac) e la versione di Claude Code (`claud
   - **Windows**, in PowerShell: `irm https://claude.ai/install.ps1 | iex`
   - **Mac:** `curl -fsSL https://claude.ai/install.sh | bash`
 
-  Se l'installazione stampa istruzioni per aggiungere una cartella al PATH, mostrale all'amico e applicale con il suo ok: senza, il comando non si trova nemmeno dopo il riavvio.
-  Poi ripeti `claude --version`. Se non lo trova ancora, il motivo è che questa sessione non vede i comandi appena installati. Scrivi nel file di stato «CLI installata, riprendere dal passo 1», poi di' all'amico: «Chiudi Claude Code e riaprilo (se sei in VS Code, chiudi tutto VS Code con Cmd+Q su Mac o dal menu File → Esci su Windows), incolla di nuovo il link del kit e scrivi: continua l'installazione del kit».
+  L'estensione di VS Code non installa questo comando: va installato anche se l'estensione funziona.
+  Se l'installazione stampa istruzioni per aggiungere una cartella al PATH, mostrale all'amico e applicale con il suo ok: senza, il comando non si trova nemmeno dopo il riavvio. Su Mac l'installer mette il comando in `~/.local/bin/claude` e non modifica `~/.zshrc`. Se stampa `Setup notes:` con «~/.local/bin is not in your PATH», la riga da aggiungere è `echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc`.
+  Poi ripeti `claude --version`. Se non lo trova, prova il percorso completo che l'installazione ha stampato (su Mac di solito `~/.local/bin/claude --version`): se risponde, usa quel percorso al posto di `claude` per il resto dell'installazione, scrivilo nel file di stato e vai avanti senza riavvio. Se non risponde nemmeno così, il motivo è che questa sessione non vede i comandi appena installati. Scrivi nel file di stato «CLI installata, riprendere dal passo 1», poi di' all'amico: «Chiudi Claude Code e riaprilo (se sei in VS Code, chiudi tutto VS Code con Cmd+Q su Mac o dal menu File → Exit su Windows), incolla di nuovo il link del kit e scrivi: continua l'installazione del kit».
 
 - **Node c'è:** vai al passo 2.
 - **Node manca:** spiega che serve per la barra di stato, per gli hook e per due script del kit, e proponi di installarlo. Aspetta l'ok.
@@ -65,6 +66,7 @@ Rileva il sistema operativo (Windows o Mac) e la versione di Claude Code (`claud
 ### 2. Plugin
 
 Controlla prima cosa c'è già: `claude plugin list --json` e `claude plugin marketplace list`. Quello che c'è già installato non si reinstalla.
+Se un comando `claude plugin` si ferma perché chiede di accedere, l'accesso lo fa l'amico, una volta sola. Dagli questi passi: in VS Code apre il menu **Terminal → New Terminal** (oppure usa il Terminale del Mac), scrive `claude` e preme Invio, accede nel browser e poi scrive `/exit`. Quando ti dice che ha fatto, ripeti il comando.
 **Prima del primo comando, il backup:** i comandi `claude plugin` scrivono in `~/.claude/settings.json` (aggiungono `extraKnownMarketplaces` ed `enabledPlugins` e riordinano le voci). Se il file esiste, copialo in `~/.claude/settings.json.kit-backup-<AAAA-MM-GG>` e segna il percorso nel file di stato. È il backup che serve anche al passo 4.
 Mostra all'amico l'elenco qui sotto, dividendo i plugin sempre accesi dagli opzionali, e chiedi un ok per ciascun gruppo.
 
@@ -160,7 +162,7 @@ Se l'utente scrive «continua l'installazione del kit», leggi ~/.claude/kit-met
 ```
 
 Con `<KIT>` già sostituito dal percorso vero. Poi di' all'amico, in parole semplici:
-«Chiudi Claude Code e riaprilo, anche in un'altra cartella. Se sei in VS Code, chiudi tutto VS Code (Cmd+Q su Mac, File → Esci su Windows): chiudere la chat non basta. Plugin, hook e barra di stato si attivano solo al riavvio. Scrivi: continua l'installazione del kit».
+«Chiudi Claude Code e riaprilo, anche in un'altra cartella. Se sei in VS Code, chiudi tutto VS Code (Cmd+Q su Mac, File → Exit su Windows): chiudere la chat non basta. Plugin, hook e barra di stato si attivano solo al riavvio. Scrivi: continua l'installazione del kit».
 
 **Fine della fase A:** il file di stato è completo e l'amico sa cosa scrivere. Aspetta lì.
 

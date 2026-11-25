@@ -20,11 +20,11 @@ Un marketplace di plugin per Claude Code che porta sul tuo computer un metodo di
 Il tuo Claude legge `INSTALLA.md`, ti riassume cosa vuole fare e ti chiede il permesso prima di ogni passo. Ti arriveranno 10-15 richieste di permesso: leggile una per una.
 Prima di toccare il tuo `CLAUDE.md` o il tuo `settings.json` fa una copia di sicurezza e ti mostra le differenze. A metà strada ti chiede di riaprire Claude Code, poi si riparte con «continua l'installazione del kit».
 
-Servono Node e il comando `claude` da terminale. Se mancano, il tuo Claude propone di installarli. Il resto lo gestisce lui.
+Servono Node e il comando `claude` da terminale, che l'estensione di VS Code non installa. Se mancano, il tuo Claude propone di installarli. Il resto lo gestisce lui.
 
 ## Dove funziona
 
-Il kit si usa con Claude Code sul tuo computer, da terminale o dall'estensione di VS Code: tutti e due leggono la stessa configurazione in `~/.claude`. È pensato per Windows e Mac. Non funziona dove Claude gira su una macchina che non è la tua: la chat di claude.ai, le sessioni cloud di Claude Code, la modalità Cowork dell'app Claude. Lì Claude lavora in una macchina virtuale che si cancella. Al massimo vede qualche cartella che gli hai condiviso, ma non `~/.claude`. Le sessioni locali dell'app desktop non le ha provate nessuno, quindi il kit non promette niente su di esse.
+Il kit si usa con Claude Code sul tuo computer, da terminale o dall'estensione di VS Code: tutti e due leggono la stessa configurazione in `~/.claude`. È pensato per Windows e Mac. Non funziona dove Claude gira su una macchina che non è la tua: la chat di claude.ai, le sessioni cloud di Claude Code, la modalità Cowork dell'app Claude. Lì Claude lavora in un ambiente separato dal tuo computer. Al massimo vede qualche cartella che gli hai condiviso, ma non `~/.claude`. Le sessioni locali della scheda Code dell'app desktop, secondo la documentazione, leggono le stesse impostazioni, hook e skill. Però non le ha provate nessuno, e l'app ha una sua copia di Claude Code che si aggiorna per conto suo: il kit non promette niente su di esse.
 
 Il consiglio è lavorare in VS Code con l'estensione Claude Code: vedi le modifiche ai file prima di accettarle e clicchi sui file che Claude cita. Se non ci sei già, il tuo Claude te lo propone alla fine dell'installazione.
 
