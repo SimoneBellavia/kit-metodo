@@ -11,7 +11,7 @@ Un marketplace di plugin per Claude Code che porta sul tuo computer un metodo di
 
 ## Come si installa
 
-1. Apri Claude Code.
+1. Apri Claude Code **sul tuo computer**: nel Terminale (su Windows, PowerShell) scrivi `claude`, oppure usa l'estensione di VS Code. Le sessioni nel cloud e la modalità Cowork dell'app Claude non vanno bene (vedi «Dove funziona»).
 2. Incolla il link di questo repo.
 3. Scrivi: **installa il metodo da qui**.
 
@@ -22,7 +22,7 @@ Servono Node e il comando `claude` da terminale. Se mancano, il tuo Claude propo
 
 ## Dove funziona
 
-Il kit si usa con Claude Code sul tuo computer, da terminale o dall'estensione di VS Code: tutti e due leggono la stessa configurazione in `~/.claude`. È pensato per Windows e Mac. L'app desktop non l'ha provata nessuno, quindi il kit non promette niente su di essa. Nella chat di claude.ai dal browser non funziona, perché lì Claude non può toccare i file del tuo computer.
+Il kit si usa con Claude Code sul tuo computer, da terminale o dall'estensione di VS Code: tutti e due leggono la stessa configurazione in `~/.claude`. È pensato per Windows e Mac. Non funziona dove Claude gira su una macchina che non è la tua: la chat di claude.ai, le sessioni cloud di Claude Code, la modalità Cowork dell'app Claude. Lì Claude lavora in una macchina virtuale che si cancella. Al massimo vede qualche cartella che gli hai condiviso, ma non `~/.claude`. Le sessioni locali dell'app desktop non le ha provate nessuno, quindi il kit non promette niente su di esse.
 
 Il consiglio è lavorare in VS Code con l'estensione Claude Code: vedi le modifiche ai file prima di accettarle e clicchi sui file che Claude cita. Se non ci sei già, il tuo Claude te lo propone alla fine dell'installazione.
 

@@ -30,6 +30,8 @@ Nei comandi scrivi i percorsi con la barra `/`, anche su Windows: va bene sia pe
 
 ### 0. Saluto e avviso
 
+Prima di tutto controlla di girare sul computer dell'amico. Una sessione cloud, la modalità Cowork o una sandbox girano su una macchina virtuale Linux: lì un'installazione finisce in una macchina che si cancella. Se il sistema risulta Linux, oppure non hai accesso a `~/.claude`, chiedigli se il suo computer è davvero Linux. Se non lo è, fermati prima di modificare qualsiasi cosa. Spiegagli che deve aprire Claude Code sul suo computer: nel Terminale (PowerShell su Windows) scrive `claude`, oppure usa l'estensione di VS Code. Lì incolla di nuovo il link del kit.
+
 Scrivi: «Tanti saluti da parte di Simone!». Spiega in tre righe cosa stai per fare: installare dei plugin, copiare nel suo `~/.claude/` i protocolli e uno script per la barra di stato, sempre con il suo ok.
 Avvisalo che Claude Code gli mostrerà 10-15 richieste di permesso (lettura di questo sito, comandi da terminale, scritture in `~/.claude`): sono normali e può leggerle una per una.
 Chiedi se vuole cominciare. **Fine del passo:** l'amico ha detto di sì. Crea allora `~/.claude/kit-metodo-installazione.md` con il titolo e la riga «Passo 0 fatto».
