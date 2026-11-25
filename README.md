@@ -24,6 +24,18 @@ Serve Node. Se manca, il tuo Claude propone di installarlo. Il resto lo gestisce
 
 Il kit è provato con la CLI di Claude Code. È pensato per Windows e Mac. L'app desktop non l'ha provata nessuno, quindi il kit non promette niente su di essa.
 
+Se hai spostato la configurazione di Claude Code con la variabile `CLAUDE_CONFIG_DIR`, il kit non funziona: installazione e script cercano tutto in `~/.claude`.
+
+## Se vuoi tornare indietro
+
+Scrivi al tuo Claude: **togli il Kit Metodo e rimetti i miei backup**. Ti mostra cosa fa e chiede prima di ogni passo. Se preferisci farlo a mano, queste sono le cose da sistemare:
+
+- **Plugin:** `claude plugin list` li elenca. Per ognuno, `claude plugin uninstall <nome>@<marketplace>`.
+- **`~/.claude/CLAUDE.md` e `~/.claude/settings.json`:** le copie di prima hanno lo stesso nome con `.kit-backup-<data>` in fondo. Rimetti la copia al posto del file. Se la copia non c'è, il file prima non esisteva e puoi spostarlo nel Cestino.
+- **Barra di stato e libreria delle skill:** `~/.claude/statusline.js` e `~/.claude/skills-library/`. Insieme alla libreria togli da `~/.claude/skills/` i collegamenti che puntano lì, poi rimetti in `~/.claude/skills/` le skill che avevi già: le copie stanno in `~/.claude/kit-backup-skills/`.
+
+Riavvia Claude Code e sei tornato com'eri.
+
 ## Per capire il metodo
 
 `FRAMEWORK.md` spiega a una persona, senza gergo, cosa fa ogni parte del kit e perché. Leggilo prima, dopo o mai: l'installazione funziona lo stesso.
