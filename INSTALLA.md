@@ -44,7 +44,8 @@ Rileva il sistema operativo (Windows o Mac) e la versione di Claude Code (`claud
   - **Windows**, in PowerShell: `irm https://claude.ai/install.ps1 | iex`
   - **Mac:** `curl -fsSL https://claude.ai/install.sh | bash`
 
-  Poi ripeti `claude --version`. Se non lo trova ancora, il motivo è che questa sessione non vede i comandi appena installati. Scrivi nel file di stato «CLI installata, riprendere dal passo 1», poi di' all'amico: «Chiudi Claude Code e riaprilo, incolla di nuovo il link del kit e scrivi: continua l'installazione del kit».
+  Se l'installazione stampa istruzioni per aggiungere una cartella al PATH, mostrale all'amico e applicale con il suo ok: senza, il comando non si trova nemmeno dopo il riavvio.
+  Poi ripeti `claude --version`. Se non lo trova ancora, il motivo è che questa sessione non vede i comandi appena installati. Scrivi nel file di stato «CLI installata, riprendere dal passo 1», poi di' all'amico: «Chiudi Claude Code e riaprilo (se sei in VS Code, chiudi tutto VS Code con Cmd+Q su Mac o dal menu File → Esci su Windows), incolla di nuovo il link del kit e scrivi: continua l'installazione del kit».
 
 - **Node c'è:** vai al passo 2.
 - **Node manca:** spiega che serve per la barra di stato, per gli hook e per due script del kit, e proponi di installarlo. Aspetta l'ok.
@@ -159,7 +160,7 @@ Se l'utente scrive «continua l'installazione del kit», leggi ~/.claude/kit-met
 ```
 
 Con `<KIT>` già sostituito dal percorso vero. Poi di' all'amico, in parole semplici:
-«Chiudi Claude Code e riaprilo, anche in un'altra cartella. Plugin, hook e barra di stato si attivano solo al riavvio. Scrivi: continua l'installazione del kit».
+«Chiudi Claude Code e riaprilo, anche in un'altra cartella. Se sei in VS Code, chiudi tutto VS Code (Cmd+Q su Mac, File → Esci su Windows): chiudere la chat non basta. Plugin, hook e barra di stato si attivano solo al riavvio. Scrivi: continua l'installazione del kit».
 
 **Fine della fase A:** il file di stato è completo e l'amico sa cosa scrivere. Aspetta lì.
 

@@ -11,7 +11,9 @@ Un marketplace di plugin per Claude Code che porta sul tuo computer un metodo di
 
 ## Come si installa
 
-1. Apri Claude Code **sul tuo computer**: nel Terminale (su Windows, PowerShell) scrivi `claude`, oppure usa l'estensione di VS Code. Le sessioni nel cloud e la modalità Cowork dell'app Claude non vanno bene (vedi «Dove funziona»).
+**È la prima volta che usi Claude Code o VS Code?** Segui `GUIDA.md`: ti porta passo passo dall'installazione di VS Code fino all'uso di tutti i giorni (scritta per Mac).
+
+1. Apri Claude Code **sul tuo computer**: nell'estensione di VS Code (il modo consigliato), oppure nel Terminale (su Windows, PowerShell) scrivendo `claude`. Le sessioni nel cloud e la modalità Cowork dell'app Claude non vanno bene (vedi «Dove funziona»).
 2. Incolla il link di questo repo.
 3. Scrivi: **installa il metodo da qui**.
 
