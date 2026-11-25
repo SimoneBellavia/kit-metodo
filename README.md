@@ -18,11 +18,13 @@ Un marketplace di plugin per Claude Code che porta sul tuo computer un metodo di
 Il tuo Claude legge `INSTALLA.md`, ti riassume cosa vuole fare e ti chiede il permesso prima di ogni passo. Ti arriveranno 10-15 richieste di permesso: leggile una per una.
 Prima di toccare il tuo `CLAUDE.md` o il tuo `settings.json` fa una copia di sicurezza e ti mostra le differenze. A metà strada ti chiede di riaprire Claude Code, poi si riparte con «continua l'installazione del kit».
 
-Serve Node. Se manca, il tuo Claude propone di installarlo. Il resto lo gestisce lui.
+Servono Node e il comando `claude` da terminale. Se mancano, il tuo Claude propone di installarli. Il resto lo gestisce lui.
 
-## Cosa è stato provato
+## Dove funziona
 
-Il kit è provato con la CLI di Claude Code. È pensato per Windows e Mac. L'app desktop non l'ha provata nessuno, quindi il kit non promette niente su di essa.
+Il kit si usa con Claude Code sul tuo computer, da terminale o dall'estensione di VS Code: tutti e due leggono la stessa configurazione in `~/.claude`. È pensato per Windows e Mac. L'app desktop non l'ha provata nessuno, quindi il kit non promette niente su di essa. Nella chat di claude.ai dal browser non funziona, perché lì Claude non può toccare i file del tuo computer.
+
+Il consiglio è lavorare in VS Code con l'estensione Claude Code: vedi le modifiche ai file prima di accettarle e clicchi sui file che Claude cita. Se non ci sei già, il tuo Claude te lo propone alla fine dell'installazione.
 
 Se hai spostato la configurazione di Claude Code con la variabile `CLAUDE_CONFIG_DIR`, il kit non funziona: installazione e script cercano tutto in `~/.claude`.
 

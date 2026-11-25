@@ -38,6 +38,12 @@ Chiedi se vuole cominciare. **Fine del passo:** l'amico ha detto di sì. Crea al
 
 Rileva il sistema operativo (Windows o Mac) e la versione di Claude Code (`claude --version`). Controlla Node con `node --version`.
 
+- **`claude --version` non risponde:** succede quando l'amico usa solo l'estensione di VS Code o l'app desktop. Hanno una copia interna di Claude Code, ma non il comando da terminale, che serve al passo 2. Proponi di installarlo con il comando ufficiale e aspetta l'ok:
+  - **Windows**, in PowerShell: `irm https://claude.ai/install.ps1 | iex`
+  - **Mac:** `curl -fsSL https://claude.ai/install.sh | bash`
+
+  Poi ripeti `claude --version`. Se non lo trova ancora, il motivo è che questa sessione non vede i comandi appena installati. Scrivi nel file di stato «CLI installata, riprendere dal passo 1», poi di' all'amico: «Chiudi Claude Code e riaprilo, incolla di nuovo il link del kit e scrivi: continua l'installazione del kit».
+
 - **Node c'è:** vai al passo 2.
 - **Node manca:** spiega che serve per la barra di stato, per gli hook e per due script del kit, e proponi di installarlo. Aspetta l'ok.
   - **Windows:** `winget install OpenJS.NodeJS.LTS`.
@@ -51,7 +57,7 @@ Rileva il sistema operativo (Windows o Mac) e la versione di Claude Code (`claud
 
   Gli restano le skill dei plugin, i protocolli del `CLAUDE.md` e il compact automatico al 60% (è una variabile d'ambiente, non usa Node).
 
-**Fine del passo:** `node --version` stampa una versione, oppure l'amico ha deciso (rifiuto o riverifica dopo il riavvio) e la scelta è nel file di stato.
+**Fine del passo:** `claude --version` stampa una versione; `node --version` stampa una versione, oppure l'amico ha deciso (rifiuto o riverifica dopo il riavvio) e la scelta è nel file di stato.
 
 ### 2. Plugin
 
@@ -180,5 +186,11 @@ Se l'amico vuole il second brain (un vault di note, facoltativo), i passi sono i
 
 1. Con l'ok dell'amico togli da `~/.claude/CLAUDE.md` il blocco `kit-metodo-installazione` del passo 6.
 2. Proponi di spostare `~/.claude/kit-metodo-installazione.md` nel Cestino. Prima di farlo mostragli l'elenco dei backup con i percorsi: restano dove sono e può cancellarli quando vuole.
+3. **Consiglio su VS Code.** Se stai già girando nell'estensione Claude Code di VS Code, salta questo punto. Se non lo sai, chiedi all'amico dove usa Claude Code. Altrimenti scrivi: «Simone ti consiglia di lavorare in Visual Studio Code con l'estensione Claude Code. Vedi le modifiche ai file affiancate prima di accettarle, clicchi sui file che Claude cita, e Claude vede il testo che selezioni». Se è d'accordo:
+   - VS Code si scarica da `https://code.visualstudio.com`;
+   - due estensioni: `anthropic.claude-code` (Claude Code) e `yzhang.markdown-all-in-one` (handoff e hub sono file Markdown). Facoltativa: `tomoki1207.pdf`, per leggere i PDF dentro VS Code;
+   - le installa con `code --install-extension <id>`, se il comando `code` risponde. Altrimenti l'amico le cerca per nome nel pannello Estensioni di VS Code;
+   - il kit non va reinstallato: plugin, hook e impostazioni stanno in `~/.claude/` e l'estensione li legge da lì;
+   - le estensioni per i linguaggi (Python e simili) le propone VS Code quando l'amico apre un file di quel tipo.
 
-**Fine dell'installazione:** il blocco temporaneo non c'è più, l'amico ha l'elenco dei backup e sa dove trovare `FRAMEWORK.md`.
+**Fine dell'installazione:** il blocco temporaneo non c'è più, l'amico ha l'elenco dei backup e sa dove trovare `FRAMEWORK.md`. Se non era in VS Code, ha ricevuto il consiglio.
